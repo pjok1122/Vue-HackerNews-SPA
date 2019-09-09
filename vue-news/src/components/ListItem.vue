@@ -34,14 +34,7 @@
 export default {
     computed:{
         FetchedItem(){
-            name = this.$route.name;
-            if(name === 'news')
-                return this.$store.state.news;
-            else if(name ==='jobs')
-                return this.$store.state.jobs;
-            else if(name === 'ask')
-                return this.$store.state.ask;
-            // return this.$store.state.list;
+            return this.$store.state.list;
         }
     },
 }
