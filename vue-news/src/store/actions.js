@@ -31,8 +31,11 @@ export default {
         .catch(error => console.log(error));
     },
     FETCH_LIST({commit}, pageName){
-        fecthList(pageName)
-        .then(({data}) => commit('SET_LIST',data))
+        return fecthList(pageName)
+        .then((response) =>{
+            commit('SET_LIST',response.data);
+            return response;
+        })
         .catch(error => console.log(error));
     },
 }
