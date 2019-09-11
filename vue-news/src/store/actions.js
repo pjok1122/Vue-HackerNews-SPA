@@ -1,41 +1,34 @@
 import{
-    fetchNewsList, fetchJobsList, fetchAskList,
     fetchUserInfo, fetchAskDetail, fecthList,
 } from '../api/index.js'
 
 export default {
-    FETCH_NEWS(context){
-        fetchNewsList()
-        .then(response=> {
-            context.commit('SET_NEWS', response.data);
-        }).catch(error => console.log(error));
+    // Promise
+    // FETCH_LIST({commit}, pageName){
+    //     return fecthList(pageName)
+    //     .then((response) =>{
+    //         commit('SET_LIST',response.data);
+    //         return response;
+    //     })
+    //     .catch(error => console.log(error));
+    // },
+
+    // 1. async를 함수 앞에 붙이고, Promise를 리턴하는 함수 앞에 await를 붙이면 된다.
+    // 2. async는 무엇을 리턴하던 간에 Promise를 리턴한다.
+    // 3. 에러처리는 try-catch를 이용하는데, api 단에서 처리를 하는 것이 보기에 더 깔끔함.
+    async FETCH_LIST({commit}, pageName){
+        const res = await fecthList(pageName);
+        commit('SET_LIST', res.data);
+        return res;
     },
-    FETCH_JOBS({commit}){
-        fetchJobsList()
-        .then(({ data }) => commit('SET_JOBS', data))
-        .catch(error => console.log(error));
+    async FETCH_USER({commit}, username){
+        const res = fetchUserInfo(username);
+        commit('SET_USER', res.data);
+        return res;
     },
-    FETCH_ASK({commit}){
-        fetchAskList()
-        .then(({ data }) => commit('SET_ASK', data))
-        .catch(error => console.log(error));
-    },
-    FETCH_USER({commit}, username){
-        fetchUserInfo(username)
-        .then(({ data }) => commit('SET_USER', data))
-        .catch(error => console.log(error));
-    },
-    FETCH_ASK_DETAIL({commit}, id){
-        fetchAskDetail(id)
-        .then(({data}) => commit('SET_ASK_DETAIL', data))
-        .catch(error => console.log(error));
-    },
-    FETCH_LIST({commit}, pageName){
-        return fecthList(pageName)
-        .then((response) =>{
-            commit('SET_LIST',response.data);
-            return response;
-        })
-        .catch(error => console.log(error));
+    async FETCH_ASK_DETAIL({commit}, id){
+        const res = fetchAskDetail(id);
+        commit('SET_ASK_DETAIL', res.data);
+        return res;
     },
 }
