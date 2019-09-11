@@ -61,9 +61,9 @@ export default {
    text-decoration: underline;
  }
 /* Transition */
- /* .page-enter-active, .page-leave-active {
-  transition: opacity 0.1s;
-} */
+ .page-enter-active, .page-leave-active {
+  transition: opacity 0.3s;
+}
 
 /* 페이지를 떠날 때, 페이지를 들어갈 때? */
 .page-enter, .page-leave-to /* .page-leave-active below version 2.1.8 */ {

@@ -10,11 +10,6 @@ export const store = new Vuex.Store({
         ask_detail: {},
         list: [],
     },
-    getters:{
-        FetchedAsk(state){
-            return state.ask;
-        }
-    },
     mutations,
     actions,
 });
