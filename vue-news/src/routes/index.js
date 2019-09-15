@@ -5,6 +5,7 @@ import JobsView from '../views/JobsView.vue';
 import NewsView from '../views/NewsView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
+import ChartView from '../views/ChartView';
 import bus from '../utils/bus.js';
 import { store } from '../store/index.js';
 Vue.use(VueRouter);
@@ -57,6 +58,10 @@ export const router = new VueRouter({
         {
             path: '/item/:id',
             component: ItemView,
+        },
+        {
+            path: '/chart',
+            component: ChartView,
         }
     ]
 });
