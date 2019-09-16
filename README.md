@@ -1,11 +1,8 @@
-# Spinner
+# Vue-advanced
 
-웹 페이지의 이동에 Spinner를 넣어, UX를 개선했습니다.
+Hackernews에서 제공하는 API를 이용하여 SPA(Single Page Application)을 만들었습니다.
 
-## 라우터 네비게이션 가드
+Vuex, vue-router, 비동기 처리, HOC, mixins 등 다양한 기술들을 공부해볼 수 있는 프로젝트 입니다.
 
-라우터 네비게이션 가드를 이용해, 데이터 호출 시점을 변경했습니다.
+프로젝트 진행 상황에 대한 자세한 내용은 챕터(branch) 별로 blog.naver.com/pjok1122 에 기술했습니다.
 
-네트워크 속도가 느릴 때 이전의 데이터의 잔상이 남는 문제점을 제거할 수 있었습니다.
-
-자세한 내용은 블로그 https://blog.naver.com/pjok1122/221644786721 에서 다룹니다.
