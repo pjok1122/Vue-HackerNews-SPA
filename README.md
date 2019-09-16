@@ -1,5 +1,9 @@
 # Vue-advanced
 
+https://hackernews-pjok1122.netlify.com 에서 시연해볼 수 있습니다.
+
+## 프로젝트 목적
+
 Hackernews에서 제공하는 API를 이용하여 SPA(Single Page Application)을 만들었습니다.
 
 Vuex, vue-router, 비동기 처리, HOC, mixins 등 다양한 기술들을 공부해볼 수 있는 프로젝트 입니다.
