@@ -22,12 +22,12 @@ export default {
         return res;
     },
     async FETCH_USER({commit}, username){
-        const res = fetchUserInfo(username);
+        const res = await fetchUserInfo(username);
         commit('SET_USER', res.data);
         return res;
     },
     async FETCH_ASK_DETAIL({commit}, id){
-        const res = fetchAskDetail(id);
+        const res = await fetchAskDetail(id);
         commit('SET_ASK_DETAIL', res.data);
         return res;
     },

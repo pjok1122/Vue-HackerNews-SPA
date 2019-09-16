@@ -4,7 +4,6 @@
       <div slot="username"> {{user.id}}</div>
       <div slot="time"> {{ 'Joined '+ user.created}}</div>
       <div slot="karma">{{user.karma}}</div>
-
     </user-profile>
     <!-- <p>username : {{user.id}}</p>
     <p>karma : {{user.karma}}</p>
@@ -25,7 +24,8 @@ export default {
   },
   created(){
     const username = this.$route.params.id;
-    this.$store.dispatch('FETCH_USER', username)
+    console.log(username);
+    this.$store.dispatch('FETCH_USER', username);
   }
 }
 </script>

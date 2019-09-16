@@ -7,7 +7,7 @@ const config ={
 //2. API 함수들을 정리
 async function fecthList(pageName){
     try {
-    return await axios.get(`${config.baseUrl}${pageName}/1.json`);        
+        return await axios.get(`${config.baseUrl}${pageName}/1.json`);        
     } catch (error) {
         console.log(error);
     }
@@ -21,7 +21,7 @@ async function fetchUserInfo(username){
 }
 async function fetchAskDetail(id){
     try{
-    return await axios.get(`${config.baseUrl}item/${id}.json`);
+        return await axios.get(`${config.baseUrl}item/${id}.json`);
     } catch(error){
         console.log(error);
     }
